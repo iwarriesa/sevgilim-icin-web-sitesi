@@ -1,36 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sevgilim için</title>
+    <title>Sevgilimle Anılarımız</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Canım Sevgilim, Kerem 🤍</h1>
-    </header>
-    <main>
-        <section id="welcome">
-            <p>Hayatıma kattığın güzellik için teşekkür ederim. 💕</p>
-        </section>
-        <section id="gallery">
-            <h2>Birlikte Anılarımız</h2>
-            <div class="photo-grid">
-                <img src="photo1.jpg" alt="Anı 1">
-                <img src="photo2.jpg" alt="Anı 2">
-                <img src="photo3.jpg" alt="Anı 3">
+    <div class="container">
+        <h1 class="title">🌸 Sevgilimle Anılarımız 🌸</h1>
+        <div class="counter">
+            <p>Birlikte <span id="years">0</span> yıl, <span id="months">0</span> ay, <span id="days">0</span> gündür beraberiz.</p>
+        </div>
+
+        <!-- Fotoğraf Galerisi -->
+        <div class="photo-gallery">
+            <!-- İlk Satır (4 Fotoğraf) -->
+            <div class="photo-row">
+                <div class="photo-card">
+                    <div class="front">
+                        <img src="resimler/photo1.jpg" alt="Anı 1">
+                    </div>
+                    <div class="back">
+                        <p><strong>Tarih:</strong> 6 Aralık 2024</p>
+                        <p><strong>O gün:</strong>: İlk defa ailecek bir akşam yemeği yedik. 🤍</p>
+                        <button onclick="playVideo('video1.mp4')">▶ Video İzle</button>
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="front">
+                        <img src="resimler/photo2.png" alt="Anı 2">
+                    </div>
+                    <div class="back">
+                        <p><strong>Tarih:</strong> 7 Aralık 2024</p>
+                        <p><strong>O gün:</strong>: İlk defa basketbol oynadık. 🤍</p>
+                        <button onclick="playVideo('video2.mp4')">▶ Video İzle</button>
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="front">
+                        <img src="photo3.jpg" alt="Anı 3">
+                    </div>
+                    <div class="back">
+                        <p><strong>Tarih:</strong> 10 Eylül 2023</p>
+                        <p>O gün: Pikniğe gittik ve eğlenceli bir gün geçirdik. 🍉</p>
+                        <button onclick="playVideo('video3.mp4')">▶ Video İzle</button>
+                    </div>
+                </div>
+
+              
             </div>
-        </section>
-        <section id="message">
-            <h2>Senin İçin Özel Bir Mesaj</h2>
-            <button onclick="showMessage()">Mesajı Göster</button>
-            <p id="hidden-message" style="display: none;">Seni çok seviyorum, bir ömür boyu yanımda ol! 💖</p>
-        </section>
-    </main>
-    <footer>
-        <p>Bu site sadece senin için tasarlandı. 💌</p>
-    </footer>
-    <script src="scripts.js"></script>
+
+            <!-- İkinci Satır (3 Fotoğraf) -->
+            <div class="photo-row">
+                <div class="photo-card">
+                    <div class="front">
+                        <img src="photo5.jpg" alt="Anı 5">
+                    </div>
+                    <div class="back">
+                        <p><strong>Tarih:</strong> 1 Haziran 2024</p>
+                        <p>O gün: Birlikte eğlenceli bir müzik festivali gezdik. 🎶</p>
+                        <button onclick="playVideo('video5.mp4')">▶ Video İzle</button>
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="front">
+                        <img src="photo6.jpg" alt="Anı 6">
+                    </div>
+                    <div class="back">
+                        <p><strong>Tarih:</strong> 20 Eylül 2023</p>
+                        <p>O gün: Kayak tatili yaptık. 🎿</p>
+                        <button onclick="playVideo('video6.mp4')">▶ Video İzle</button>
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="front">
+                        <img src="photo7.jpg" alt="Anı 7">
+                    </div>
+                    <div class="back">
+                        <p><strong>Tarih:</strong> 14 Mart 2024</p>
+                        <p>O gün: Birlikte sinemaya gittik. 🎬</p>
+                        <button onclick="playVideo('video7.mp4')">▶ Video İzle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player -->
+    <div id="videoPlayer" class="video-player">
+        <button class="close-btn" onclick="closeVideo()">X</button>
+        <video id="videoElement" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
